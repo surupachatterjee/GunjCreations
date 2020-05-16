@@ -1,0 +1,21 @@
+/* .image {
+  height: 10rem;
+  background-size: cover;
+  width: auto;
+  background-image: url("../../assets/gunjaran.jpg");
+  background-position: 50% 50%;
+} */
+
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+  align-items: center;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
