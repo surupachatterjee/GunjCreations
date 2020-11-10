@@ -1,93 +1,122 @@
-<div class="header">
-  <img src="../../assets/gunjaran.jpg" alt="logo" />
-  <h1>Gunjaran Creations</h1>
-  <!-- <h1><img src="../../assets/gunjaran.jpg" alt="logo" /> My website name</h1> -->
+<div style="background-color: black; height: 100px; text-align: center;">
+  <h1 style="color: blanchedalmond; font-family: cursive; padding-top: 25px;">
+    GUNJARAN CREATIONS
+  </h1>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col">
-      <div class="row row-cols"></div>
-      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="inputFirstName">First Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputFirstName"
-            formControlName="firstName"
-          />
-        </div>
-        <div class="form-group">
-          <label for="inputLastName">Last Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputLastName"
-            formControlName="lastName"
-          />
-        </div>
-        <div class="form-group">
-          <label for="inputLastName">Phone</label>
-          <input
-            type="text"
-            class="form-control"
-            id="phone"
-            formControlName="phone"
-          />
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
-            formControlName="street"
-          />
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress2"
-            placeholder="Apartment, studio, or floor"
-            formControlName="street2"
-          />
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
+
+<div *ngIf="showRegistration">
+  <div
+    class="container-fluid"
+    style="
+      background-image: url('../../assets/dance3.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+    "
+  >
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="row row-cols"></div>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="inputFirstName">First Name</label>
             <input
               type="text"
               class="form-control"
-              id="inputCity"
-              formControlName="city"
+              [ngClass]="input"
+              id="inputFirstName"
+              formControlName="firstName"
             />
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select
-              id="inputState"
-              class="form-control"
-              formControlName="state"
-            >
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
+          <div class="form-group">
+            <label for="inputLastName">Last Name</label>
             <input
               type="text"
               class="form-control"
-              id="inputZip"
-              formControlName="zip"
+              id="inputLastName"
+              formControlName="lastName"
             />
           </div>
-        </div>
-        <div class="form-row">
+          <div class="form-group">
+            <label for="inputLastName">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              formControlName="phone"
+            />
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Video URL</label>
+              <input
+                type="text"
+                class="form-control"
+                id="video"
+                formControlName="video"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress"
+              placeholder="1234 Main St"
+              formControlName="street"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress2"
+              placeholder="Apartment, studio, or floor"
+              formControlName="street2"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCity"
+                formControlName="city"
+              />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select
+                id="inputState"
+                class="form-control"
+                formControlName="state"
+              >
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputZip"
+                formControlName="zip"
+              />
+            </div>
+          </div>
+          <!-- <div class="form-row">
           <div class="form-group">
             <label for="inputVideo">Upload Video</label>
             <input
@@ -97,17 +126,36 @@
               accept="video/*"
             />
           </div>
-        </div>
-        <button
-          type="submit"
-          class="btn btn-primary form-control"
-          [disabled]="!profileForm.valid"
-        >
-          Submit
-        </button>
-      </form>
-      <div></div>
+        </div> -->
+          <button
+            type="submit"
+            class="btn btn-primary form-control"
+            [disabled]="!profileForm.valid"
+          >
+            Submit
+          </button>
+        </form>
+        <div></div>
+      </div>
+      <div class="col"></div>
     </div>
-    <div class="col"></div>
   </div>
+</div>
+
+<div *ngIf="!showRegistration">
+  <h1 style="color: darkgreen;">Registration Completed Sucessfully!!!!</h1>
+</div>
+
+<div
+  style="
+    background-color: black;
+    height: 20px;
+    text-align: center;
+    margin: 5px 0px;
+    margin-top: 10px;
+  "
+>
+  <p style="color: blanchedalmond; font-family: cursive;">
+    @Copyright 2020
+  </p>
 </div>

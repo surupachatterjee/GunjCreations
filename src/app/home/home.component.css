@@ -12,6 +12,7 @@
   height: 100px;
   background: #555;
   align-items: center;
+  background-image: url("../../assets/dance.jpg");
 }
 
 .header h1 {
